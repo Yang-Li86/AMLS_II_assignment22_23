@@ -1,7 +1,8 @@
 # AMLS_II_assignment22_23
-AMLS_II_assignment22_23 Coursework Assignment Repo
 
-Create Repo
+Download the se_resnext50_32x4d pretrained weights to Datasets/se_resnext50_32x4d-a260b3a4.pth.
+Download the Prostate cANcer graDe Assessment (PANDA) Challenge dataset from Kaggle, move the training images to Datasets/images.
+
 
 ## Software used
 

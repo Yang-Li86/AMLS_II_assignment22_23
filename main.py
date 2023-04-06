@@ -5,6 +5,10 @@ from src.model import *
 from src.train import *
 from sklearn.model_selection import StratifiedKFold
 import pandas as pd
+from src.test import *
+from sklearn.metrics import confusion_matrix
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -53,3 +57,10 @@ for fold in range(CFG.n_fold):
 
 # ======================================================================================================================
 # Testing
+sample = pd.read_csv('Output/test.csv')
+
+# test submission
+submission = submit(sample, dir_name='train_images')
+submission['isup_grade'] = submission['isup_grade'].astype(int)
+submission.to_csv('submission.csv', index=False)
+
